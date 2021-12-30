@@ -1,14 +1,11 @@
-# Twomes CO₂ meter shield hardware designs 
+# Twomes CO₂ meter shield hardware 
 
-This repository contains the open hardware design files for the Twomes CO₂ meter measuremens device, which can be used as a [WeMos D1 Mini shield](https://www.wemos.cc/en/latest/d1_mini_shield/index.html), on top of a WeMos D1 Mini board, such as the [LilyGO TTGO T7 Mini32 V1.3 ESP32](https://github.com/LilyGO/ESP32-MINI-32-V1.3), which is based on an ESP32 SoC, or the [Wemos LOLIN D1 mini](https://www.wemos.cc/en/latest/d1/d1_mini.html), which is based on an ESP8266 SoC. 
-
-Describe the function of the shiels.
+This repository contains the open hardware design files for the Twomes CO₂ meter shield, which can measure CO₂ concentration, relative humidity and temperature.
 
 <img src="./Hardware/front.jpg" width="400" height="400" /> <img src="./Hardware/back.jpg" width="400" height="400" />
 
 ## Table of contents
 * [General info](#general-info)
-* [Prerequisites](#prerequisites)
 * [Producing](#producing)
 * [Developing](#developing) 
 * [Features](#features)
@@ -17,54 +14,32 @@ Describe the function of the shiels.
 * [Credits](#credits)
 
 ## General info
-This repository will contain the hardware designs, such as schematics and board layout files for the Twomes something shield.
-
-For the associated firmwware that you can run on this device, please see [this repository](https://github.com/energietransitie/twomes-opentherm-gateway-diyless).
-
-## Prerequisites
-Describe which hardware and software you need to produce and/or develop the hardawre. If the prerequisites are different for users that only wish to produce hardware versus uers that (also) wish to develop new versions of the hardware, you may want to move the prerequisites section as a subsection of each of those sections.
+This repository contains the hardware designs, such as schematics and board layout files for the Twomes CO₂ meter shield. It has the form factor of a [WeMos D1 Mini shield](https://www.wemos.cc/en/latest/d1_mini_shield/index.html). This allows it to be used in many ways, e.g.:
+* on top of [Twomes Temperature Monitor Hardware](https://github.com/energietransitie/twomes-temp-monitor-hardware), running the [Twomes Room Monitor firmware](https://github.com/energietransitie/twomes-room-monitor-firmware);
+* on top of a [LilyGO TTGO T7 Mini32 V1.3 ESP32](https://github.com/LilyGO/ESP32-MINI-32-V1.3), running fimrware yet to be written, based on [Twomes Generic firmware](https://github.com/energietransitie/twomes-generic-esp-firmware). 
 
 ## Producing
 
-Describe how the reader use the files contained in this repository to produce the PCB hardware and enclusure(s). 
 
-### Printed Ciruit Board
-Document how to order (small) series of PCBs from a PCB fabrication service, including SMT assembly if the design calls for it. Use steps if the procedure is non-trivial:
-1. first step;
-2. second step;
-3. final step.
+### Printed Circuit Board
+To manufacture the printed circuit board you can use various PCB services. The folder [Output_files](./pcb/Output_files/FABRICATION) contains the files necessary. 
 
-Format any scripts or commands in a way that makes them  easy to copy, like the following example. 
-
-Forgotten your Wi-Fi password? No problem with the follwing command, replacing `SSID` with the Wi-Fi name of your own Wi-Fi network: 
-```shell
-netsh wlan show profile SSID key=clear
-```
-### Enclosure
-Document how to print (small) series of enclosures, e.g. on a 3D printer, and/or how to order enclusures, e.g. from a 3D printing service. Use steps if the procedure is non-trivial:
-1. first step;
-2. second step;
-3. final step.
-
-Format any scripts or commands in a way that makes them  easy to copy, like the following example. 
-
-Forgotten your Wi-Fi password? No problem with the follwing command, replacing `SSID` with the Wi-Fi name of your own Wi-Fi network: 
-```shell
-netsh wlan show profile SSID key=clear
-```
+To have the PCBs manufactured via [JLCPCB](https://www.jlcpcb.com), the PCB manufacturer we used, upload the Gerber files in a zip to their [quote page](https://cart.jlcpcb.com/quote), select the amount of PCBs and a colour for silkscreen. All other options can be left on default. If SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. Use the files [BOM_TwomesCO2-BreakoutJLCPCB.csv](./pcb/Output_files/FABRICATION/BOM_AND_POS/BOM_CO2-BreakoutJLCPCB.csv) and [TwomesCO2-Breakout-top-pos.csv](./pcb/Output_files/FABRICATION/BOM_AND_POS/TwomesCO2-Breakout-top-pos.csv).
 
 ## Developing
-Describe how the reader can change or extend the harware design. 
+To change the hardware designs, you need:
+* [KiCad](https://www.kicad.org/download/) installed to change te PCB design. 
 
+Some EDA tools may be able to convert the files, however this is not supported and may result in errors.
+
+To export the modified PCBs, consult the webpage of your PCB manufacturer of choice for guidance on how to produce the output files. For example,  see the [JLCPCB guide on how to export Gerbers](https://support.jlcpcb.com/article/149-how-to-generate-gerber-and-drill-files-in-kicad) and the  [JLCPCB guide how to export the BOM and POS files](https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad)
 ## Features
-List of features ready and TODOs for future development. Ready:
-* awesome feature 1;
-* awesome feature 2;
-* awesome feature 3.
+The Twomes Twomes CO₂ meter shield features the follwoing main hardware components:
+* Sensirion [SCD41](https://www.sensirion.com/en/environmental-sensors/carbon-dioxide-sensors/carbon-dioxide-sensor-scd4x/) sensor, which can measure CO₂ concentration, relative humidity and temperature;
+* [Si7051](https://www.silabs.com/sensors/temperature/si705x/device.si7051) temperature sensor. 
 
 To-do:
-* wow improvement to be done 1;
-* wow improvement to be done 2.
+* add female connector for the [SEK-SCD41](https://www.sensirion.com/en/environmental-sensors/evaluation-kit-sek-environmental-sensing/evaluation-kit-sek-scd41/) evaluation kit;
 
 ## Status
 Project is: _in progress_
@@ -74,20 +49,8 @@ The hardware designs in this repository are available under the [CERN-OHL-P v2 l
 
 ## Credits
 This open hardware design is a collaborative effort of:
+* Sjors Smit · [@Shorts1999](https://github.com/Shorts1999)
 * Marco Winkelman · [@MarcoW71](https://github.com/MarcoW71)
-* <contributor name 2> · [@Github_handle_2](https://github.com/<github_handle_2>) · Twitter [@Twitter_handle_2](https://twitter.com/<twitter_handle_2>)
-* <contributor name 3> · [@Github_handle_3](https://github.com/<github_handle_3>) · Twitter [@Twitter_handle_3](https://twitter.com/<twitter_handle_3>)
-* etc. 
 
-Thanks also go to:
-* <thanks name 1> · [@Github_handle_1](https://github.com/<github_handle_1>) · Twitter [@Twitter_handle_1](https://twitter.com/<twitter_handle_1>)
-* <thanks name 2> · [@Github_handle_2](https://github.com/<github_handle_2>) · Twitter [@Twitter_handle_2](https://twitter.com/<twitter_handle_2>)
-* <thanks name 3> · [@Github_handle_3](https://github.com/<github_handle_3>) · Twitter [@Twitter_handle_3](https://twitter.com/<twitter_handle_3>)
-* etc. 
-
-We use and gratefully aknowlegde the efforts of the makers of the following designs:
-
-* [library name 1 and version](library 1 URL), by <copyright holder name 1>, licensed under [license 1 name](license1 URL)
-* [library name 2 and version](library 2 URL), by <copyright holder name 2>, licensed under [license 2 name](license2 URL)
-* [library name 3 and version](library 3 URL), by <copyright holder name 3>, licensed under [license 3 name](license3 URL)
-* etc. 
+We use and gratefully acknowlegde the efforts of the makers of the following designs:
+* [KiCad Libraries](https://kicad.github.io/), by the KiCad Development Team, licensed under [adapted version of the CC-BY-SA 4.0 License](https://www.kicad.org/libraries/license/)
