@@ -2,7 +2,7 @@
 
 This repository contains the open hardware design files for the Twomes CO₂ meter shield, which can measure CO₂ concentration, relative humidity and temperature.
 
-<img src="./Hardware/front.jpg" width="400" height="400" /> <img src="./Hardware/back.jpg" width="400" height="400" />
+<img src="./images/front.jpg" width="400" height="400" /> <img src="./images/back.jpg" width="400" height="400" />
 
 ## Table of contents
 * [General info](#general-info)
