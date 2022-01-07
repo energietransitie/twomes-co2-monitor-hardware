@@ -51,7 +51,7 @@ To add a hardware design for an enclosure, we recomend either either:
 
 Put the source files of the enclosure in the folder [enclosure](./enclosure). Please always include a include a common 3D source file format editable with open source 3D design tools, such as [FreeCAD](https://www.freecadweb.org/).
 ## Features
-The Twomes Twomes CO₂ Monitor Shield features the follwoing main hardware components:
+The Twomes CO₂ Monitor Shield features the follwoing main hardware components:
 * Sensirion [SCD41](https://www.sensirion.com/en/environmental-sensors/carbon-dioxide-sensors/carbon-dioxide-sensor-scd4x/) sensor, which can measure CO₂ concentration, relative humidity and temperature;
 * [Si7051](https://www.silabs.com/sensors/temperature/si705x/device.si7051) temperature sensor. 
 
