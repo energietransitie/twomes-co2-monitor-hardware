@@ -17,13 +17,11 @@ It has the form factor of a [WeMos D1 Mini shield](https://www.wemos.cc/en/lates
 * [Credits](#credits)
 
 ## General info
-This repository contains the hardware designs, such as schematics and board layout files for the . 
 This repository contains the open hardware designs files for the Twomes CO₂ Monitor Shield, It also includes a `docs` folder with recent printouts of the [schematics](./docs/twomes-co2-monitor-hardware-sch.pdf) and [PCB layout](./docs/docs/twomes-co2-monitor-hardware-pcb.pdf). 
 
-The associated firmware depends on the context:
+The associated firmware you should use depends on the context:
 * if you use the shield on top of [Twomes Temperature Monitor Hardware](https://github.com/energietransitie/twomes-temp-monitor-hardware), use the [Twomes Room Monitor firmware](https://github.com/energietransitie/twomes-room-monitor-firmware);
-* if you use the shield on top of a [LilyGO TTGO T7 Mini32 V1.3 ESP32](https://github.com/LilyGO/ESP32-MINI-32-V1.3), you have to write your own firmware, based on [Twomes Generic firmware](https://github.com/energietransitie/twomes-generic-esp-firmware). 
-
+* if you use the shield on top of a [LilyGO TTGO T7 Mini32 V1.3 ESP32](https://github.com/LilyGO/ESP32-MINI-32-V1.3), use the [Twomes CO₂ Monitor firmware](https://github.com/energietransitie/twomes-co2-monitor-firmware).
 
 ## Producing
 
