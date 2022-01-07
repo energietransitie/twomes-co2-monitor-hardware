@@ -2,8 +2,8 @@
 
 This repository contains the open hardware design files for the Twomes CO₂ Monitor Shield, which can measure CO₂ concentration, relative humidity and temperature.
 It has the form factor of a [WeMos D1 Mini shield](https://www.wemos.cc/en/latest/d1_mini_shield/index.html). This allows it to be used in many ways, e.g.:
-* on top of [Twomes Temperature Monitor Hardware](https://github.com/energietransitie/twomes-temp-monitor-hardware), running the [Twomes Room Monitor firmware](https://github.com/energietransitie/twomes-room-monitor-firmware);
-* on top of a [LilyGO TTGO T7 Mini32 V1.3 ESP32](https://github.com/LilyGO/ESP32-MINI-32-V1.3), running fimrware yet to be written, based on [Twomes Generic firmware](https://github.com/energietransitie/twomes-generic-esp-firmware). 
+* on top of [Twomes Temperature Monitor Hardware](https://github.com/energietransitie/twomes-temp-monitor-hardware);
+* on top of a [LilyGO TTGO T7 Mini32 V1.3 ESP32](https://github.com/LilyGO/ESP32-MINI-32-V1.3). 
 
 <img src="./images/front.jpg" width="400" height="400" /> <img src="./images/back.jpg" width="400" height="400" />
 
